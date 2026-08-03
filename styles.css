@@ -1,0 +1,71 @@
+/* Bratersko — publiczne dokumenty prawne (mobile-first) */
+:root {
+  --bg: #f4efe6;
+  --ink: #1e2a44;
+  --muted: #5a6a86;
+  --accent: #2e4a7a;
+  --card: #fffdf9;
+  --line: #d7cfc2;
+  --note: #7a2e2e;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  background: linear-gradient(180deg, #e8f0fa 0%, var(--bg) 35%, #efe6d8 100%);
+  color: var(--ink);
+  line-height: 1.55;
+  min-height: 100vh;
+}
+.wrap { width: min(760px, calc(100% - 2rem)); margin: 0 auto; }
+.site-header {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(255,253,249,0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.site-header .wrap {
+  display: flex; flex-wrap: wrap; gap: 0.75rem 1.25rem;
+  align-items: center; justify-content: space-between;
+  padding: 0.85rem 0;
+}
+.brand {
+  font-weight: 800; font-size: 1.2rem; color: var(--accent);
+  text-decoration: none; letter-spacing: 0.02em;
+}
+.nav { display: flex; flex-wrap: wrap; gap: 0.65rem 1rem; }
+.nav a {
+  color: var(--muted); text-decoration: none; font-weight: 600; font-size: 0.95rem;
+}
+.nav a[aria-current="page"], .nav a:hover { color: var(--accent); text-decoration: underline; }
+.doc {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1.25rem 1.25rem 2rem;
+  margin: 1.25rem auto 2rem;
+  box-shadow: 0 10px 30px rgba(30,42,68,0.06);
+}
+h1 { font-size: 1.55rem; line-height: 1.25; margin: 0 0 0.35rem; color: var(--accent); }
+h2 { font-size: 1.1rem; margin: 1.4rem 0 0.5rem; color: var(--accent); }
+.meta { color: var(--muted); font-size: 0.9rem; margin: 0 0 1rem; }
+p { margin: 0 0 0.75rem; }
+.note {
+  color: var(--note); font-weight: 700;
+  border-left: 3px solid var(--note); padding-left: 0.75rem;
+}
+ul { margin: 0 0 0.9rem; padding-left: 1.2rem; }
+li { margin-bottom: 0.35rem; }
+.cta {
+  display: inline-block; margin: 0.5rem 0.5rem 0.5rem 0;
+  background: var(--accent); color: #fff; text-decoration: none;
+  font-weight: 700; padding: 0.7rem 1rem; border-radius: 12px;
+}
+.cta.secondary { background: transparent; color: var(--accent); border: 2px solid var(--accent); }
+.site-footer { padding: 1.5rem 0 2.5rem; color: var(--muted); font-size: 0.9rem; }
+.site-footer a { color: var(--accent); }
+.muted { opacity: 0.85; }
+@media (max-width: 560px) {
+  h1 { font-size: 1.3rem; }
+  .doc { padding: 1rem 1rem 1.5rem; border-radius: 12px; }
+}
