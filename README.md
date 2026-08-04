@@ -1,9 +1,9 @@
 # Publiczna witryna dokumentów Bratersko
 
 Ścieżki docelowe:
-- https://bratersko.eu/regulamin
-- https://bratersko.eu/polityka-prywatnosci
-- https://bratersko.eu/usun-konto
+- https://bratersko.pl/regulamin
+- https://bratersko.pl/polityka-prywatnosci
+- https://bratersko.pl/usun-konto
 
 ## Regeneracja HTML z treści JS
 
