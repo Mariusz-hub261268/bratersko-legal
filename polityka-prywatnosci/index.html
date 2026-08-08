@@ -20,7 +20,7 @@
   </header>
   <main class="wrap doc">
     <h1>Polityka prywatności aplikacji Bratersko</h1>
-    <p class="meta">Wersja dokumentu: 2026-08-04</p>
+    <p class="meta">Wersja dokumentu: 2026-08-08</p>
     <p>Niniejsza Polityka prywatności opisuje zasady przetwarzania danych osobowych w związku z korzystaniem z aplikacji mobilnej Bratersko („Aplikacja”). Dokument publiczny: https://bratersko.pl/polityka-prywatnosci.</p>
 <h2>1. Administrator danych</h2>
 <p>Administratorem danych osobowych jest Mariusz Szczepocki, e-mail główny: kontakt@bratersko.pl, adres korespondencyjny: 94-047 Łódź ul. Kardynała Wyszyńskiego 55 m93.</p>
@@ -42,13 +42,14 @@
 <li>Pytania w „Obalamy mity”: treść pytania wpisanego przez użytkownika oraz wygenerowana odpowiedź; pytanie może być przekazane do OpenAI (myths-ask).</li>
 <li>Dane bezpieczeństwa: blokady użytkowników; zgłoszenia (powód, komentarz, migawka treści, ewentualna ścieżka mediów, status obsługi).</li>
 <li>Powiadomienia push: token Expo Push, platforma urządzenia, preferencje powiadomień (rodzaje alertów).</li>
+<li>Dyktowanie (opcjonalnie): tekst rozpoznany z mowy w polu tekstowym; w ramach tej funkcji Bratersko nie utrwala nagrań audio (szczegóły — § 11).</li>
 <li>Dane techniczne niezbędne do działania: logi diagnostyczne po stronie serwera (Edge Functions / infrastruktura), identyfikatory techniczne powiązane z żądaniami API. Aplikacja nie integruje osobnych SDK analityki ani crash-reportingu (stan na wersję dokumentu).</li>
 </ul>
 <p class="note">Nie przetwarzamy w Aplikacji: daty urodzenia, lokalizacji GPS, płatności, logowania społecznościowego (Google/Apple OAuth) — funkcje te nie są wdrożone w kodzie.</p>
 <h2>4. Dane konieczne a dobrowolne</h2>
 <ul>
 <li>Konieczne do założenia i utrzymania konta: e-mail, hasło, potwierdzenie e-mail, akceptacja Regulaminu, potwierdzenie zapoznania się z Polityką prywatności, potwierdzenie ukończenia 18 lat.</li>
-<li>Dobrowolne (możesz je uzupełnić lub pominąć w zakresie dopuszczonym przez UI): nick i pozostałe pola profilu, avatar, zainteresowania, treści wezwań/czatów/społeczności, pytania do funkcji mitów, zgoda systemowa na powiadomienia push.</li>
+<li>Dobrowolne (możesz je uzupełnić lub pominąć w zakresie dopuszczonym przez UI): nick i pozostałe pola profilu, avatar, zainteresowania, treści wezwań/czatów/społeczności, pytania do funkcji mitów, zgoda systemowa na powiadomienia push, zgoda systemowa na mikrofon / rozpoznawanie mowy (dyktowanie).</li>
 <li>Bez e-maila i hasła nie utworzysz konta. Bez akceptacji dokumentów prawnych i potwierdzenia 18+ nie uzyskasz dostępu do funkcji Aplikacji po zalogowaniu.</li>
 </ul>
 <h2>5. Cele i podstawy prawne</h2>
@@ -85,9 +86,21 @@
 <p>Stosujemy automatyczną, regułową moderację tekstu. Zgłoszenia użytkowników są zapisywane w celu bezpieczeństwa społeczności i mogą być przeglądane przez administratora. Zgłoszenia nie są widoczne publicznie dla innych użytkowników. Szczegóły retencji — § 8.</p>
 <h2>10. Powiadomienia push</h2>
 <p>Jeśli udzielisz zgody systemowej, Aplikacja rejestruje Expo Push Token i może wysyłać powiadomienia o zdarzeniach (np. wiadomości, wezwania, wyszukiwania brata) zgodnie z Twoimi przełącznikami preferencji w profilu. Token możesz unieważnić, wyłączając powiadomienia lub usuwając konto.</p>
-<h2>11. Bezpieczeństwo danych</h2>
+<h2>11. Mikrofon i dyktowanie (mowa → tekst)</h2>
+<p>Aplikacja oferuje opcjonalną funkcję dyktowania: zamianę mowy na tekst w wybranych polach tekstowych. Funkcja jest dobrowolna — możesz z niej nie korzystać i nadal wpisywać treść ręcznie.</p>
+<ul>
+<li>Mikrofon uruchamiasz samodzielnie, naciskając ikonę mikrofonu przy polu tekstowym. Aplikacja prosi wtedy o zgodę systemową na mikrofon / rozpoznawanie mowy.</li>
+<li>Odmowa zgody nie blokuje ręcznego pisania wiadomości ani innych funkcji Aplikacji opartych na tekście.</li>
+<li>Bratersko samo nie utrwala nagrań audio w ramach tej funkcji — nie zapisujemy plików dźwiękowych w pamięci Aplikacji ani w naszym magazynie (storage).</li>
+<li>W ramach dyktowania Bratersko nie wysyła nagrania audio do własnego backendu, Supabase ani OpenAI. Rozpoznawanie mowy realizuje systemowa usługa rozpoznawania mowy urządzenia (przez bibliotekę expo-speech-recognition).</li>
+<li>Zależnie od urządzenia, jego konfiguracji i dostawcy systemowej usługi rozpoznawania mowy, audio może być przetwarzane lokalnie na urządzeniu albo przekazywane do dostawcy tej usługi (np. Google lub Apple). Bratersko nie kontroluje tej ścieżki po stronie systemu.</li>
+<li>Do Aplikacji wraca wyłącznie tekst rozpoznanej wypowiedzi. Tekst pojawia się najpierw w polu tekstowym i możesz go poprawić przed wysłaniem.</li>
+<li>Mikrofon nigdy sam nie wysyła wiadomości ani nie publikuje treści. Dopiero naciśnięcie istniejącego przycisku Wyślij lub Opublikuj przekazuje tekst dalej — wtedy jest on traktowany tak samo jak tekst wpisany ręcznie (w tym moderacja i przechowywanie treści, zgodnie z pozostałymi punktami tej Polityki).</li>
+<li>Zgodę na mikrofon / rozpoznawanie mowy możesz później zmienić w ustawieniach systemowych telefonu.</li>
+</ul>
+<h2>12. Bezpieczeństwo danych</h2>
 <p>Stosujemy środki techniczne i organizacyjne adekwatne do ryzyka, m.in.: szyfrowanie transmisji (HTTPS/TLS), kontrolę dostępu (uwierzytelnianie, reguły dostępu w bazie), powierzenie infrastruktury wyspecjalizowanym dostawcom, ograniczenie uprawnień po stronie Edge Functions oraz mechanizm samodzielnego usuwania konta. Żaden system nie gwarantuje pełnego bezpieczeństwa; zachęcamy do używania silnego, unikalnego hasła.</p>
-<h2>12. Prawa użytkownika</h2>
+<h2>13. Prawa użytkownika</h2>
 <p>Przysługują Ci — w granicach RODO — prawa do:</p>
 <ul>
 <li>dostępu do danych,</li>
@@ -100,13 +113,13 @@
 <li>wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych.</li>
 </ul>
 <p>Wnioski RODO kieruj na: rodo@bratersko.pl. Odpowiadamy bez zbędnej zwłoki, nie później niż w ciągu 1 miesiąca od otrzymania wniosku; w razie potrzeby termin może zostać przedłużony o kolejne 2 miesiące zgodnie z art. 12 RODO — poinformujemy Cię o przedłużeniu.</p>
-<h2>13. Usuwanie konta i danych</h2>
+<h2>14. Usuwanie konta i danych</h2>
 <ul>
 <li>W Aplikacji: Profil → Usuń konto i dane (wymaga potwierdzenia).</li>
 <li>Bez instalacji Aplikacji: https://bratersko.pl/usun-konto oraz e-mail usun-konto@bratersko.pl.</li>
 <li>Usuwane są m.in.: konto Auth, profil, treści powiązane z kontem, pliki w magazynie należące do użytkownika, tokeny push, preferencje, blokady; zgłoszenia są pseudonimizowane i mogą pozostać do 180 dni.</li>
 </ul>
-<h2>14. Zmiany Polityki</h2>
+<h2>15. Zmiany Polityki</h2>
 <p>Polityka może być aktualizowana. O istotnych zmianach poinformujemy w Aplikacji; korzystanie może wymagać ponownego potwierdzenia zapoznania się z dokumentem. Aktualna wersja: https://bratersko.pl/polityka-prywatnosci.</p>
   </main>
   <footer class="site-footer">
